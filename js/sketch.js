@@ -1,4 +1,3 @@
-let color = "orangered";
 let size = 16;
 
 const init = () => {
@@ -21,7 +20,8 @@ const listener = function () {
   let section = document.querySelectorAll("#grid div");
   section.forEach((s) => {
     s.addEventListener("mouseover", (e) => {
-      e.target.style.backgroundColor = color;
+      let color = Math.floor(Math.random() * 16777215).toString(16);
+      e.target.style.backgroundColor = "#" + color;
     });
   });
 };
@@ -44,6 +44,9 @@ function set() {
   size = prompt("Enter number of squares per side (no more 100)");
   if (size > 100) {
     size = 100;
+    alert("Set to 100");
+  } else if (size < 0 || size == 0) {
+    size = 16;
   }
   let grid = document.querySelector("#grid");
 
