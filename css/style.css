@@ -1,75 +1,109 @@
-body{
-    display: flexbox;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Roboto', sans-serif;
-    padding: 0;
-    margin: 0;
-    padding-left: 25%;
-    padding-right: 25%;
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
 }
 
-#header{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 12vh;
-    margin-bottom: -3%;
+#header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e4e4e4;
+  width: 100%;
+  margin-bottom: 2%;
+}
+a:link {
+  color: black;
+}
+a:visited {
+  color: black;
+}
+a:hover {
+  color: #14bee9;
 }
 
-#main{
-    display: flexbox;
-    flex: auto;
-    background-color: rgba(250, 235, 215, 0.363);
-    width: 45vw;
-    height: 45vw;
+h1 {
+  font-family: "Comforter", cursive;
+  font-weight: 500;
+  font-size: 5em;
 }
 
-#footer a{
-    display: flex;
-    flex: 1 1 auto;
-    /* height: 9vh; */
-    justify-content: right;
-    padding-top: 5%;
-    align-items: center;
-    font-size: 1.7em;
-    text-decoration: none;
+#grid {
+  flex: 1;
+  width: 30%;
+  height: 30%;
+  flex-wrap: wrap;
+  display: flex;
+  border: rgba(0, 0, 0, 0.295) 1.5em solid;
+  margin-bottom: 1%;
 }
 
-h1{
-    font-family: 'Comforter', cursive;
-    font-weight: 500;
-    font-size: 5em;
+.hovered {
+  background-color: black;
 }
 
-#grid{
-    flex: 1;
-    flex-wrap: wrap;
-    display: flexbox;
-    border: black 1px solid;
-    width: 45vw;
-    height: 45vw;
+#buttons {
+  flex: 1;
+  align-self: center;
+  width: 30%;
 }
 
-
-.section{
-    height: auto;
-    width: auto;
-    flex: 1 1 auto;
-    display: inline-block;
-    background-color: red;
+button {
+  flex: 1;
+  padding: 5px 15px;
+  font-weight: 700;
 }
 
-#buttons{
-    flex: 1 1 10%;
-    display: flexbox;
-    padding: 10px;
+.github {
+  position: absolute;
+  right: 3em;
+  top: 2em;
+  text-decoration: none;
 }
 
-button{
-    display: inline-block;
-    width: 20%;
-    height: 10%;
-    align-self: center;
-    justify-self: center;
+.button-55 {
+  align-self: center;
+  background-color: #fff;
+  background-image: none;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, 0.2) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: #41403e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Neucha, sans-serif;
+  font-size: 1rem;
+  line-height: 23px;
+  outline: none;
+  padding: 0.75rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 50%;
+}
+
+.button-55:hover {
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+.button-55:focus {
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 4px -6px;
 }
