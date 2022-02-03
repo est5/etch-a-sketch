@@ -1,40 +1,56 @@
-const color = "orangered";
-let size = 8;
-
-let percent = 100 / size;
-const width = percent + "%";
-const paddingBottom = percent + "%";
-console.log(percent);
-
-const grid = document.querySelector("#grid");
+let color = "orangered";
+let size = 16;
 
 const init = () => {
-  for (let i = 0; i < size; i++) {
-    for (let j = 0; j < size; j++) {
-      let div = document.createElement("div");
-      div.className = "section";
-      div.style.height = 0;
-      div.style.width = width;
-      div.style.paddingBottom = paddingBottom;
-      grid.appendChild(div);
-    }
+  for (let j = 0; j < size * size; j++) {
+    let grid = document.querySelector("#grid");
+    let div = document.createElement("div");
+    let percent = 100 / size;
+    let width = percent + "%";
+    let paddingBottom = percent + "%";
+    div.style.height = 0;
+    div.style.width = width;
+    div.style.paddingBottom = paddingBottom;
+    grid.appendChild(div);
   }
 };
 
 init();
 
-const section = document.querySelectorAll(".section");
-section.forEach((s) => {
-  s.addEventListener("mouseover", (e) => {
-    e.target.style.backgroundColor = color;
+const listener = function () {
+  let section = document.querySelectorAll("#grid div");
+  section.forEach((s) => {
+    s.addEventListener("mouseover", (e) => {
+      e.target.style.backgroundColor = color;
+    });
   });
-});
+};
 
-const button = document.querySelector(".button-55");
-button.addEventListener("click", clear);
+listener();
+const clearButton = document.querySelector("#clear");
+const setButton = document.querySelector("#set");
+
+clearButton.addEventListener("click", clear);
+setButton.addEventListener("click", set);
 
 function clear() {
+  let section = document.querySelectorAll("#grid div");
   section.forEach((s) => {
     s.style.backgroundColor = "white";
   });
+}
+
+function set() {
+  size = prompt("Enter number of squares per side (no more 100)");
+  if (size > 100) {
+    size = 100;
+  }
+  let grid = document.querySelector("#grid");
+
+  while (grid.firstChild) {
+    grid.removeChild(grid.firstChild);
+  }
+
+  init();
+  listener();
 }
